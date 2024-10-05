@@ -48,7 +48,7 @@ pipeline {
                 sh '''
                     JENKINS_NODE_COOKIE=dontKillMe
                     nohup node dist/bundle.js > output.log 2>&1 &
-                    echo $! > server.pid
+                    pgrep -f 'node dist/bundle.js' > server.pid
                     echo 'Express server deployed and started on prod. environment successfully on port 4000.'
                 '''
             }
