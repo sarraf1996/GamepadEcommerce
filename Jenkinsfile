@@ -40,23 +40,25 @@ pipeline {
         }
         stage('Deploy on prod') {
             input {
-                message "Are you sure to continue?"
-                ok "Yes, continue."
+                message 'Are you sure to continue?'
+                ok 'Yes, continue.'
             }
             steps {
-                echo 'Deployed on prod. environment successfully.'
+                // Start the Express server in the background.
+                sh 'nohup node dist/bundle.js > output.log 2>&1 &'
+                echo 'Express server deployed and started on prod. environment successfully on port 4000.'
             }
         }
     }
     post {
         always {
-            echo "========always========"
+            echo '========always========'
         }
         success {
-            echo "========pipeline executed successfully with all stages========"
+            echo '========pipeline executed successfully with all stages========'
         }
         failure {
-            echo "========pipeline execution failed within some stage========"
+            echo '========pipeline execution failed within some stage========'
         }
     }
 }
