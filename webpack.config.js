@@ -1,4 +1,5 @@
 const path = require('path');
+const copyWebpackPlugin = require('copy-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
@@ -8,7 +9,16 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
     },
     target: 'node', // This will define NodeJs as the environment in which the bundle should run.
-    externalsPresets: { node: true }, // Ignore built-in modules like path, fs, etc.
-    externals: [nodeExternals()], // Ignore all modules in "node_modules" folder.
-    mode: 'production'
+    mode: 'production',
+
+    plugins: [
+        new copyWebpackPlugin({
+            patterns: [
+                { from: path.resolve(__dirname, 'src'), to: path.resolve(__dirname, 'dist/src') }
+            ],
+        }),
+    ],
+
+    externalsPresets: { node: true }, // Ignore built-in modules like path, fs, etc. while build.
+    externals: [nodeExternals()] // Ignore all modules in "node_modules" folder while build.
 };
