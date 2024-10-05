@@ -44,7 +44,7 @@ pipeline {
                 ok 'Yes, continue.'
             }
             steps {
-                // Start the Express server in the background.
+                // Start the Express server in the background on Jenkins server itself on port 4000.
                 sh '''
                     JENKINS_NODE_COOKIE=dontKillMe
                     nohup node dist/bundle.js > output.log 2>&1 &
