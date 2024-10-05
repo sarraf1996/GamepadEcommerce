@@ -45,10 +45,7 @@ pipeline {
             }
             steps {
                 // Start the Express server in the background.
-                sh 'export JENKINS_NODE_COOKIE="dontKillMe"'
-                sh '${JENKINS_NODE_COOKIE}'
-                sh 'echo ${JENKINS_NODE_COOKIE}'
-                sh 'nohup node dist/bundle.js > output.log 2>&1 &'
+                sh 'BUILD_ID=dontKillMe nohup node dist/bundle.js > output.log 2>&1 &'
                 sh 'ps aux | grep dist/bundle*'
                 echo 'Express server deployed and started on prod. environment successfully on port 4000.'
             }
