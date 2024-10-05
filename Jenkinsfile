@@ -35,7 +35,7 @@ pipeline {
             echo "========pipeline executed successfully with all stages========"
         }
         failure {
-            echo "========some stage while pipeline execution failed========"
+            echo "========pipeline execution failed within some stage========"
         }
     }
 }
