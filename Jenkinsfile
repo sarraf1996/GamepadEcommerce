@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeJS' // Name of the NodeJS installation configured in Global Tools Configuration.
+    }
+
     stages {
         stage('Checkout') {
             steps {
