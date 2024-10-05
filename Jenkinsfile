@@ -45,7 +45,7 @@ pipeline {
             }
             steps {
                 // Start the Express server in the background.
-                sh 'nohup node dist/bundle.js &'
+                sh 'nohup node "dist/bundle.js" &'
                 echo 'Express server deployed and started on prod. environment successfully on port 4000.'
             }
         }
