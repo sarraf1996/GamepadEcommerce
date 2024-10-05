@@ -13,6 +13,6 @@ app.get('/', (req, res) => {
     return res.render(path.resolve(__dirname, 'src/index.ejs'));
 });
 
-app.listen(port, '0.0.0.0', () => {
+app.listen(port, () => {
     console.log(`Express server started at port:${port}`);
 });
