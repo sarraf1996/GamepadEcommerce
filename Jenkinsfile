@@ -6,6 +6,7 @@ pipeline {
             steps {
                 // Check out the source code from Git.
                 git url: 'https://github.com/sarraf1996/GamepadEcommerce.git', branch: 'main'
+                echo 'Source code from Git fetched successfully.'
             }
         }
         stage('Build') {
