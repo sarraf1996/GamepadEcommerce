@@ -18,11 +18,11 @@ pipeline {
             }
         }
         stage('Deploy on prod') {
+            input {
+                message "Are you sure to continue?"
+                ok "Yes, continue."
+            }
             steps {
-                input {
-                    message "Are you sure to continue..."
-                    ok "Yes, continue"
-                }
                 echo 'deploy on prod'
             }
         }
