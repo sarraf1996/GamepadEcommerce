@@ -1,0 +1,30 @@
+{
+  "name": "gamepad-ecommerce",
+  "version": "1.0.0",
+  "description": "This is an Ecommerce website for Gamepad.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarraf1996/GamepadEcommerce.git"
+  },
+  "author": "Shubham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarraf1996/GamepadEcommerce/issues"
+  },
+  "homepage": "https://github.com/sarraf1996/GamepadEcommerce#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

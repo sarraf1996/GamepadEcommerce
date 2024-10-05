@@ -9,9 +9,17 @@ pipeline {
                 echo 'Source code from GitHub fetched successfully.'
             }
         }
+        stage('Install Dependencies') {
+            steps {
+                // Install project specific dependencies listed under "package.json" file.
+                sh 'npm install'
+                echo 'Project dependencies installed successfully.'
+            }
+        }
         stage('Build') {
             steps {
                 // Start the build process.
+                sh 'npm run build'
                 echo 'Build completed successfully.'
             }
         }
