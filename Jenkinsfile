@@ -49,7 +49,8 @@ pipeline {
                 sh 'node --version'
                 sh 'npm --version'
                 sh 'ls -ltr'
-                sh 'nohup node dist/bundle.js > output.log 2>&1 & disown'
+                sh 'nohup node dist/bundle.js > output.log 2>&1 &'
+                sh 'ps aux | grep dist/bundle*'
                 echo 'Express server deployed and started on prod. environment successfully on port 4000.'
             }
         }
