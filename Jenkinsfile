@@ -2,19 +2,27 @@ pipeline {
     agent any
 
     stages {
-        stage('Test') {
+        stage('Checkout') {
             steps {
-                echo 'test'
+                // Check out the source code from Git.
+                git url: 'https://github.com/sarraf1996/GamepadEcommerce.git', branch: 'main'
             }
         }
         stage('Build') {
             steps {
-                echo 'build'
+                // Start the build process.
+                echo 'Build completed successfully.'
+            }
+        }
+        stage('Test') {
+            steps {
+                // Start the testing process.
+                echo 'Testing completed successfully.'
             }
         }
         stage('Deploy on test') {
             steps {
-                echo 'deploy on test'
+                echo 'Deployed on test environment successfully.'
             }
         }
         stage('Deploy on prod') {
@@ -23,7 +31,7 @@ pipeline {
                 ok "Yes, continue."
             }
             steps {
-                echo 'deploy on prod'
+                echo 'Deployed on prod. environment successfully.'
             }
         }
     }
