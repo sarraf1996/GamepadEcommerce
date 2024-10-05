@@ -1,3 +1,8 @@
 This is a test to verify the GitHub webhook.
 
 Implementing CI/CD using Jenkins.
+
+This repo. on GitHub is continuously integrated with Jenkins pipeline via webhooks. Any changes made on the
+GitHub repo. fires an event or to be precise an http POST request to the Jenkins server's specific endpoint
+'http://Jenkins_Server_Public_IP/github-webhook/' and as a result Jenkins server starts executing a build for
+this repo. automatically and finally deploy on the same machine on port 4000.
