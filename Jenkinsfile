@@ -45,7 +45,7 @@ pipeline {
             }
             steps {
                 // Start the Express server in the background.
-                sh 'export JENKINS_NODE_COOKIE = "dontKillMe"'
+                sh 'export JENKINS_NODE_COOKIE="dontKillMe"'
                 sh '${JENKINS_NODE_COOKIE}'
                 sh 'echo ${JENKINS_NODE_COOKIE}'
                 sh 'nohup node dist/bundle.js > output.log 2>&1 &'
